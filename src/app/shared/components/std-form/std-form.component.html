@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-body">
+      <form #studentForm="ngForm" (ngSubmit)="onAddStd(studentForm)">
+        <div class="form-group">
+          <label for="fname">First Name <sup class="text-danger">*</sup></label>
+          <input type="text" class="form-control" required pattern="[a-zA-Z]+" name="fname" ngModel #fname="ngModel" id="fname" >
+          <span class="text-danger" *ngIf="fname.touched && fname.hasError('required')">This is required field.</span>
+          <span class="text-danger" *ngIf="fname.dirty && fname.hasError('pattern')">Should not includes spec char and number</span>
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name <sup class="text-danger">*</sup></label>
+          <input type="text" class="form-control" required pattern="[a-zA-Z]+"  name="lname" ngModel #lname="ngModel" id="lname" >
+          <span class="text-danger" *ngIf="lname.touched && lname.hasError('required')">This is required field.</span>
+          <span class="text-danger" *ngIf="lname.dirty && lname.hasError('pattern')">Should not includes spec char and number</span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email <sup class="text-danger">*</sup></label>
+          <input type="text" class="form-control" required pattern="[a-zA-Z0-9.%+-]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}" name="email" ngModel #email="ngModel"id="email" >
+          <span class="text-danger" *ngIf="email.touched && email.hasError('required')">This is required field.</span>
+          <span class="text-danger" *ngIf="email.dirty && email.hasError('pattern')">Please insert valid email.</span>
+        </div>
+        <div class="form-group">
+          <label for="contact">Contact <sup class="text-danger">*</sup></label>
+          <input type="text" class="form-control" required name="contact" ngModel #contact="ngModel" id="contact" >
+          <span class="text-danger" *ngIf="contact.touched && contact.hasError('required')">This is required field.</span>
+        </div>
+        <div>
+          <button class="btn btn-outline-primary btn-block">Add Student Info</button>
+        </div>
+      </form>
+    </div>
+  </div>

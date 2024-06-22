@@ -1,0 +1,11 @@
+<div class="card">
+    <div class="card-body">
+      <div class="form-group">
+        <label for="todo">TODO <sup class="text-danger">*</sup></label>
+        <input type="text" class="form-control" #todo id="todo">
+      </div>
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-outline-primary btn-block" (click)="onClickTodo(todo)">Add Todo</button>
+    </div>
+  </div>
